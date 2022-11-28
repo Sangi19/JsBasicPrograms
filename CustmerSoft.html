@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer details app</title>
+</head>
+<body>
+    <h1>customer app</h1>
+
+    <div>
+        <input id="cName" placeholder="Enter name"/>
+        <input id="cAge" placeholder="Enter age"/>
+        <input id="cNo" placeholder="Enter no"/>
+        <input id="cAdds" placeholder="Enter address"/>
+        <input id="cEmail" placeholder="Enter email"/>
+        <button onclick="addCust()">Add</button>
+        <button onclick="updateCust()">Update</button>
+        <button onclick="editcust()">Edit</button>
+        <button ondblclick="delcust()">Delete</button>
+    </div>
+    <div>
+        <h2>customer details</h2>
+        <ul id="showCustomerDetails"></ul>
+    </div>
+
+    <script>
+        const customerArr=[{
+            cName:"sam",
+            cAge:30,
+            cNo:9876543202,
+            cAdds:"26, porkudamnagar, madurai",
+            cEmail:"sangiammu21@gmail.com"
+        }]
+
+        const showList=document.getElementById("showCustomerDetails")
+         
+        customerArr.map((person,index)=>{
+            arr=Object.values(person,index)
+            showLi(arr,index)
+           
+         })
+
+         function showLi(arr,index) {
+            const liTag=document.createElement('li')
+            liTag.innerHTML=arr
+            //  liTag.innerHTML = editbtn;
+            // liTag.innerHTML = deletebtn
+            
+            showList.appendChild(liTag)
+         }
+
+         const tempObj = {
+            tName: '',
+            tAge: '',
+            tNum: '',
+            tAdds:'',
+            tEmail:'',
+            };
+
+            function addCust(){
+                tempObj.tName=document.getElementById("cName").value
+                tempObj.tAge=document.getElementById("cAge").value
+                tempObj.tNum=document.getElementById("cNo").value
+                tempObj.tAdds=document.getElementById("cAdds").value
+                tempObj.tEmail=document.getElementById("cEmail").value
+                const editBtn=document.createElement('button')
+                editBtn.innerHTML='edit'                
+                const delBtn=document.createElement('button')
+                delBtn.innerHTML='delete'
+            
+               customerArr.push(tempObj)
+
+
+                showList.innerHTML=""
+                customerArr.map((person,index)=>{
+                arr=Object.values(person,index)
+                showLi(arr,index)
+                })
+         }
+
+    </script>
+
+
+    
+</body>
+</html>

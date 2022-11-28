@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bomb</title>
+</head>
+<body>
+    <h2>bomb</h2>
+    <input type="number" id="inputval">Enter any value between 15</input>
+    <button onclick="bombClick()" >submit</button>
+    <p>Result</p>
+    <p id="resultValue"></p>
+    <script>
+        const targetArr=['1','1','1','1','1','1','1','1','1','1','1','1','1','1','1']
+
+        function bombClick() {
+            const targetVal=document.getElementById('inputval').value;
+
+            let a=Math.floor(Math.random()*targetArr.length)
+            targetArr[a]='x'
+            let b=Math.floor(Math.random()*targetArr.length)
+            targetArr[b]='x'
+            let c=Math.floor(Math.random()*targetArr.length)
+            targetArr[c]='x'
+            let d=Math.floor(Math.random()*targetArr.length)
+            targetArr[d]='x'
+            console.log(targetArr)
+                
+                    if(targetArr[targetVal]=== '1'){
+
+                        document.getElementById('resultValue').innerHTML="pass"
+                        alert("passed. Enter another value")
+                        bombClick()
+                    }                        
+                    else{
+
+                        document.getElementById('resultValue').innerHTML="out"
+                    }                  
+                
+
+                // targetArr.filter(resultVal)              
+
+                // function resultVal() {
+                //     if(targetArr[targetVal]==='1')
+                //     {
+                //          document.getElementById('resultValue').innerHTML="pass"
+
+                //     }
+                //     else
+                //     {
+                //         document.getElementById('resultValue').innerHTML="out"
+                //     }
+                // }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>todo list with plain JS</title>
+</head>
+
+<body>
+    <h1>todo list</h1>
+    <input id="inputTodo" type="text" placeholder="add the todo" />
+    <button onclick="addTodo()">submit</button>
+    <ul id="todo-ul">
+
+
+    </ul>
+    <script>
+
+        const todos=['sam','ram','pavi']
+        var todoUl=document.getElementById("todo-ul")
+
+        function showAllLiElements(){
+            todoUl.innerHTML=""
+            todos.map(item=>showLi(item))
+        }
+
+        showAllLiElements()
+
+        function showLi(item){
+            var liTag = document.createElement("li");
+            liTag.innerHTML=item;
+            todoUl.appendChild(liTag)
+            }
+
+        function addTodo(){
+            let inputTodo =document.getElementById("inputTodo").value          
+            todos.push(inputTodo)
+            // console.log(todos)
+            showAllLiElements()
+        }
+
+        // <ul id="todo">
+        // const todos=["sam","ram"]
+
+        // let text="<ul>"
+        // todos.forEach(myFunction);
+        // text+='</ul>'
+        // document.getElementById('todo').innerHTML=text
+A
+        //     function myFunction(element) {
+        //         text+='<li>'+element+'</li>'
+        //     }
+           
+        
+        // ====================
+        // <h2>Factorial of a no. of </h2>
+        //         // FACTORIAL        
+        // let n=4,fact=1
+
+        // for(let i=1; i<=n;i++) {
+        //     fact=fact*i
+        // }
+        // console.log(fact)
+        // document.getElementById('fact_result').innerHTML="Factorial of 4 is:"+fact
+
+
+
+        // function factSubmit(n) {
+                
+        //         if(fnum<=1) {
+        //            return true
+        //         }
+        //         else
+        //         {
+        //             fnum=fnum*factSubmit(fnum-1)
+        //             return fnum
+        //         }
+        //     }
+        // document.getElementById('fact_result').innerHTML=fnum
+    
+        // ==============================
+        //Swaping 2 var
+        // let a=2, b=4, c;
+
+        // c=a;
+        // a=b;
+        // b=c
+        // console.log(a,b)
+        // document.getElementById('fact_result').innerHTML=a,b
+
+        // =============================
+
+            // FIBONACCI
+        //     let a=0,b=1 ,n=9,c
+        //     console.log(a,b)
+        //     for(c=1;c<=n;c++){
+        //     c=a+b;
+        //     a=b
+        //     b=c;
+        //     console.log(c)
+        //     }
+        // document.getElementById('fact_result').innerHTML=a
+            // ===========================
+            
+
+    // <button onclick="prn()">submit</button>
+
+            // function prn (n) {
+            //     if(n===0) {
+            //         console.log(false)
+            //     } else if (n===1) {
+            //         console.log(false)
+            //     } else {
+            //         for(let i=0; i>=n; i++) {
+            //             if(n%2===0) {
+            //                 console.log("not prime number")
+            //             } else {
+            //                 console.log("prime number")
+            //             }
+            //         }
+                    
+            //     }
+                
+            // }
+
+
+            </script>
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>todo list with plain JS</title>
+</head>
+
+<body>
+    <h1>todo list</h1>
+    <input id="inputTodo" type="text" placeholder="add task" />
+    <input id="assign_to" type="text" placeholder="assign to" />
+
+    <button onclick="addTodo()">submit</button>
+    <ul id="todo-ul">
+
+
+    </ul>
+    <ul id="todo">
+
+    <script>
+
+        const todos=[
+            {
+                task:'develop',
+                assign_to:"ram",
+                submit_date:'aug11'
+            },            
+            {
+                task:'testing',
+                assign_to:"sam",
+                submit_date:'aug15'
+            },
+
+        ]
+        var todoUl=document.getElementById("todo-ul")
+
+        todos.map(item=>addLi(item.task,item.assign_to))
+
+        function addLi(item1,item2){
+            var liTag = document.createElement("li");
+            liTag.innerHTML=item1;            
+            var spanTag = document.createElement("span");
+            liTag.innerHTML=item2;
+            todoUl.appendChild(liTag)
+            }
+
+        function addTodo(){
+            let inputTodo =document.getElementById("inputTodo").value   
+            let assign_to =document.getElementById("assign_to").value   
+                   
+            todos.push(inputTodo)
+            console.log(todos)
+            document.getElementById("todo-ul").innerHTML=""
+            todos.map(item=>addLi(item))
+         
+        }  
+    </script>
+</body>
+
+</html>
+
+
+
+
